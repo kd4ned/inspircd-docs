@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="InspIRCd is a modular C++ Internet Relay Chat (IRC) server for UNIX-like and Windows systems.">
+    
+    
+    <link rel="../../../img/favicon.ico">
+
+    
+    <title> connect - InspIRCd Documentation</title>
+    
+
+    <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack.min.css">
+    <link href='//fonts.googleapis.com/css?family=PT+Sans:400,400italic,700,700italic&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,600,700&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href="../../../css/bootstrap-custom.min.css" rel="stylesheet">
+    <link href="../../../css/base.min.css" rel="stylesheet">
+    <link href="../../../css/cinder.min.css" rel="stylesheet">
+    <link href="../../../css/highlight.min.css" rel="stylesheet">
+    <link href="../../../css/fix-cinder-sidebar-scrolling.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+            <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+        <![endif]-->
+
+    <script src="//ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+    <script>
+    WebFont.load({
+        google: {
+            families: ['Open Sans', 'PT Sans']
+        }
+    });
+    </script>
+
+    
+
+     
+</head>
+
+<body>
+
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+
+            <!-- Main title -->
+
+            <a class="navbar-brand" href="../../..">InspIRCd Documentation</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">InspIRCd 2 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="/2/installation">Installation</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="/2/configuration">Configuration</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="/2/commands">Commands</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="/2/modes">Modes</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="/2/modules">Modules</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="/2/snomasks">SNOMasks</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">InspIRCd 3 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="/3/installation">Installation</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="/3/configuration">Configuration</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="/3/commands">Commands</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="/3/modes">Modes</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="/3/modules">Modules</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="/3/snomasks">SNOMasks</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="https://github.com/inspircd/inspircd/releases/latest">Downloads</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="https://github.com/inspircd/inspircd/issues">Issue Tracker</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="https://www.inspircd.org/api/">Developer API</a>
+                    </li>
+                
+                
+                </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                            <i class="fas fa-search"></i> Search
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/inspircd/inspircd-docs/edit/master/docs/2/configuration/_connect.md"><i class="fab fa-github"></i> Edit on GitHub</a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+    <div class="container">
+        
+        
+        <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="first-level active"><a href="#ltconnectgt">&lt;connect&gt;</a></li>
+            <li class="second-level"><a href="#example-usage">Example Usage</a></li>
+                
+    </ul>
+</div></div>
+        <div class="col-md-9" role="main">
+
+<!-- This file contains a page fragment. Any changes will affect all pages that include it. -->
+
+<h3 id="ltconnectgt"><code>&lt;connect&gt;</code></h3>
+<p>The <code>&lt;connect&gt;</code> tag defines a class that users can be filtered into when they connect to the server. This tag can be defined as many times as required.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Default Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>Text</td>
+<td><em>None</em></td>
+<td>If defined then the name of this connect class.</td>
+</tr>
+<tr>
+<td>allow</td>
+<td>Text</td>
+<td><em>None</em></td>
+<td>A glob pattern or CIDR range for an IP address which is allowed to connect to the server. If this is defined then <code>deny</code> (below) MUST NOT be defined.</td>
+</tr>
+<tr>
+<td>deny</td>
+<td>Text</td>
+<td><em>None</em></td>
+<td>A glob pattern or CIDR range for an IP address which is banned from connecting to the server. If this is defined then <code>allow</code> (above) MUST NOT be defined.</td>
+</tr>
+<tr>
+<td>commandrate</td>
+<td>Number</td>
+<td><em>None</em></td>
+<td>The number of commands per millisecond that a user can execute.</td>
+</tr>
+<tr>
+<td>fakelag</td>
+<td>Boolean</td>
+<td>Yes</td>
+<td>Whether users should have their input/output delayed when they reach a soft limit rather than being killed.</td>
+</tr>
+<tr>
+<td>globalmax</td>
+<td>Number</td>
+<td><em>None</em></td>
+<td>The maximum number of users who can exist on the entire network from the range specified in the allow field.</td>
+</tr>
+<tr>
+<td>hardsendq</td>
+<td>Number</td>
+<td>1048576</td>
+<td>The maximum amount of data allowed in a user's send queue before it is killed.</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>Number</td>
+<td><em>None</em></td>
+<td>The maximum number of users who can be in this connect class.</td>
+</tr>
+<tr>
+<td>localmax</td>
+<td>Number</td>
+<td><em>None</em></td>
+<td>The maximum number of users who can exist on the local server from the range specified in the allow field.</td>
+</tr>
+<tr>
+<td>maxchans</td>
+<td>Number</td>
+<td><em>None</em></td>
+<td>If defined then the maximum number of channels that a user in this class can be in.</td>
+</tr>
+<tr>
+<td>maxconnwarn</td>
+<td>Boolean</td>
+<td>No</td>
+<td>Whether to send a server notice when a connect class limit is reached.</td>
+</tr>
+<tr>
+<td>parent</td>
+<td>Text</td>
+<td><em>None</em></td>
+<td>If defined then the name of the class to inherit most <em>core</em> settings from.</td>
+</tr>
+<tr>
+<td>password</td>
+<td>Text</td>
+<td><em>None</em></td>
+<td><em>Not inherited from the parent block!</em>  The password that the user must send to be put into this connect class.</td>
+</tr>
+<tr>
+<td>pingfreq</td>
+<td>Number</td>
+<td>120</td>
+<td>The number of seconds this client can be idle for before sending it a <code>PING</code> message.</td>
+</tr>
+<tr>
+<td>port</td>
+<td>Number</td>
+<td><em>None</em></td>
+<td><em>Not inherited from the parent block!</em> The port on which a client must be connecting to be put into this connect class.</td>
+</tr>
+<tr>
+<td>reason</td>
+<td>Number</td>
+<td>Unauthorised connection</td>
+<td><em>Not inherited from the parent block!</em> If <code>&lt;connect:deny&gt;</code> is set then the reason to give when disconnecting a user.</td>
+</tr>
+<tr>
+<td>recvq</td>
+<td>Number</td>
+<td>4096</td>
+<td>The maximum amount of data allowed in a user's receive queue before it is killed.</td>
+</tr>
+<tr>
+<td>registered</td>
+<td>Boolean</td>
+<td><em>None</em></td>
+<td><em>Not inherited from the parent block!</em> If defined then whether this connect class matches a user in registration or a client that has completed registration.</td>
+</tr>
+<tr>
+<td>softsendq</td>
+<td>Number</td>
+<td>4096</td>
+<td>The maximum number of bytes of data that can be in a user's send queue before the server stops processing their input to allow the send queue to drain.</td>
+</tr>
+<tr>
+<td>threshold</td>
+<td>Number</td>
+<td>10</td>
+<td>The maximum amount of penalty that a user can have before being fakelagged or killed if fakelag is turned off.</td>
+</tr>
+<tr>
+<td>timeout</td>
+<td>Number</td>
+<td>90</td>
+<td>The number of seconds after which an unregistered user is timed out.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="example-usage">Example Usage</h4>
+<p>Denies connections to clients connecting from 3ffe::0/32:</p>
+<pre><code class="xml">&lt;connect name=&quot;6bone&quot;
+         deny=&quot;3ffe::0/32&quot;
+         reason=&quot;The 6bone address space is deprecated&quot;&gt;
+</code></pre>
+
+<p>Defines an SSL-only connect class and then a general connect class to inherit from:</p>
+<pre><code class="xml">&lt;connect name=&quot;Secure&quot;
+         parent=&quot;Main&quot;
+         port=&quot;6697&quot;&gt;
+
+&lt;connect name=&quot;Main&quot;
+         allow=&quot;*&quot;
+         commandrate=&quot;1000&quot;
+         fakelag=&quot;on&quot;
+         globalmax=&quot;3&quot;
+         hardsendq=&quot;1M&quot;
+         limit=&quot;5000&quot;
+         localmax=&quot;3&quot;
+         maxchans=&quot;30&quot;
+         maxconnwarn=&quot;no&quot;
+         pingfreq=&quot;120&quot;
+         recvq=&quot;8K&quot;
+         softsendq=&quot;8192&quot;
+         threshold=&quot;10&quot;
+         timeout=&quot;10&quot;&gt;
+</code></pre></div>
+        
+        
+    </div>
+
+    <footer class="col-md-12 text-center">
+        
+        <hr>
+        <p>
+        <small>All documentation is licensed under the <a href="/license">GNU GPLv2</a>.<br></small>
+        
+        <small>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p></small>
+
+        
+        
+    </footer>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../../../js/bootstrap-3.0.3.min.js"></script>
+    <script src="../../../js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script>var base_url = "../../.."</script>
+    
+    <script src="../../../js/base.js"></script>
+    <script src="../../../search/main.js"></script>
+
+    <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+    </body>
+
+</html>

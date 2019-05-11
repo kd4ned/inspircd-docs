@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="InspIRCd is a modular C++ Internet Relay Chat (IRC) server for UNIX-like and Windows systems.">
+    
+    
+    <link rel="../../img/favicon.ico">
+
+    
+    <title>Module List - InspIRCd Documentation</title>
+    
+
+    <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack.min.css">
+    <link href='//fonts.googleapis.com/css?family=PT+Sans:400,400italic,700,700italic&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,600,700&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+    <link href="../../css/base.min.css" rel="stylesheet">
+    <link href="../../css/cinder.min.css" rel="stylesheet">
+    <link href="../../css/highlight.min.css" rel="stylesheet">
+    <link href="../../css/fix-cinder-sidebar-scrolling.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+            <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+        <![endif]-->
+
+    <script src="//ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+    <script>
+    WebFont.load({
+        google: {
+            families: ['Open Sans', 'PT Sans']
+        }
+    });
+    </script>
+
+    
+
+     
+</head>
+
+<body class="homepage" >
+
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+
+            <!-- Main title -->
+
+            <a class="navbar-brand" href="../..">InspIRCd Documentation</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">InspIRCd 2 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="/2/installation">Installation</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="/2/configuration">Configuration</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="/2/commands">Commands</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="/2/modes">Modes</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="/2/modules">Modules</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="/2/snomasks">SNOMasks</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">InspIRCd 3 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="/3/installation">Installation</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="/3/configuration">Configuration</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="/3/commands">Commands</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="/3/modes">Modes</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="/3/modules">Modules</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="/3/snomasks">SNOMasks</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="https://github.com/inspircd/inspircd/releases/latest">Downloads</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="https://github.com/inspircd/inspircd/issues">Issue Tracker</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="https://www.inspircd.org/api/">Developer API</a>
+                    </li>
+                
+                
+                </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                            <i class="fas fa-search"></i> Search
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/inspircd/inspircd-docs/edit/master/docs/2/modules/index.md"><i class="fab fa-github"></i> Edit on GitHub</a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+    <div class="container">
+        
+        
+        <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="first-level active"><a href="#module-list">Module List</a></li>
+            <li class="second-level"><a href="#default-modules">Default Modules</a></li>
+                
+            <li class="second-level"><a href="#extra-modules">Extra Modules</a></li>
+                
+    </ul>
+</div></div>
+        <div class="col-md-9" role="main">
+
+<h2 id="module-list">Module List</h2>
+<p>This is a complete list of all modules that ship with InspIRCd. If you have <a href="/2/installation/source">installed from source</a> you can also install third-party modules which have been created by the InspIRCd community using the <a href="/2/module-manager">Module Manager</a>.</p>
+<h3 id="default-modules">Default Modules</h3>
+<p>These modules require no dependencies and will always be available.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="/2/modules/abbreviation">abbreviation</a></td>
+<td>Provides the ability to abbreviate commands a-la BBC BASIC keywords.</td>
+</tr>
+<tr>
+<td><a href="/2/modules/alias">alias</a></td>
+<td>Provides aliases of commands.</td>
+</tr>
+<tr>
+<td><a href="/2/modules/allowinvite">allowinvite</a></td>
+<td>Provides support for channel mode +A, allowing /invite freely on a channel and extban A to deny specific users it.</td>
+</tr>
+<tr>
+<td><a href="/2/modules/alltime">alltime</a></td>
+<td>Display timestamps from all servers connected to the network.</td>
+</tr>
+<tr>
+<td><a href="/2/modules/auditorium">auditorium</a></td>
+<td>Allows for auditorium channels (+u) where nobody can see others joining and parting or the nick list.</td>
+</tr>
+<tr>
+<td><a href="/2/modules/autoop">autoop</a></td>
+<td>Provides support for the +w channel mode.</td>
+</tr>
+<tr>
+<td><a href="/2/modules/banexception">banexception</a></td>
+<td>Provides support for the +e channel mode.</td>
+</tr>
+<tr>
+<td><a href="/2/modules/banredirect">banredirect</a></td>
+<td>Allows an extended ban (+b) syntax redirecting banned users to another channel.</td>
+</tr>
+<tr>
+<td><a href="/2/modules/blockamsg">blockamsg</a></td>
+<td>Attempt to block /amsg, at least some of the irritating mIRC scripts.</td>
+</tr>
+<tr>
+<td><a href="/2/modules/blockcaps">blockcaps</a></td>
+<td>Provides support to block all-CAPS channel messages and notices.</td>
+</tr>
+<tr>
+<td><a href="/2/modules/blockcolor">blockcolor</a></td>
+<td>Provides channel mode +c to block color.</td>
+</tr>
+<tr>
+<td><a href="/2/modules/botmode">botmode</a></td>
+<td>Provides user mode +B to mark the user as a bot.</td>
+</tr>
+<tr>
+<td><a href="/2/modules/callerid">callerid</a></td>
+<td>Implementation of callerid, usermode +g, /accept.</td>
+</tr>
+<tr>
+<td><a href="/2/modules/cap">cap</a></td>
+<td>Client CAP extension support.</td>
+</tr>
+<tr>
+<td><a href="/2/modules/cban">cban</a></td>
+<td>Gives /cban, aka C:lines. Think Q:lines, for channels.</td>
+</tr>
+<tr>
+<td><a href="/2/modules/censor">censor</a></td>
+<td>Provides user and channel +G mode.</td>
+</tr>
+<tr>
+<td><a href="/2/modules/cgiirc">cgiirc</a></td>
+<td>Change user's hosts connecting from known CGI:IRC hosts.</td>
+</tr>
+<tr>
+<td><a href="/2/modules/chancreate">chancreate</a></td>
+<td>Provides snomasks 'j' and 'J', to which notices about newly created channels are sent.</td>
+</tr>
+<tr>
+<td><a href="/2/modules/chanfilter">chanfilter</a></td>
+<td>Provides channel-specific censor lists (like mode +G but varies from channel to channel).</td>
+</tr>
+<tr>
+<td><a href="/2/modules/chanhistory">chanhistory</a></td>
+<td>Provides channel history replayed on join.</td>
+</tr>
+<tr>
+<td><a href="/2/modules/chanlog">chanlog</a></td>
+<td>Logs snomask output to channel(s).</td>
+</tr>
+<tr>
+<td><a href="/2/modules/channames">channames</a></td>
+<td>Implements config tags which allow changing characters allowed in channel names.</td>
+</tr>
+<tr>
+<td><a href="/2/modules/channelban">channelban</a></td>
+<td>Extban 'j' - channel status/join ban.</td>
+</tr>
+<tr>
+<td><a href="/2/modules/chanprotect">chanprotect</a></td>
+<td>Founder and Protect modes (+qa).</td>
+</tr>
+<tr>
+<td><a href="/2/modules/check">check</a></td>
+<td>CHECK command, view user, channel, IP address or hostname information.</td>
+</tr>
+<tr>
+<td><a href="/2/modules/chghost">chghost</a></td>
+<td>Provides support for the CHGHOST command.</td>
+</tr>
+<tr>
+<td><a href="/2/modules/chgident">chgident</a></td>
+<td>Provides support for the CHGIDENT command.</td>
+</tr>
+<tr>
+<td><a href="/2/modules/chgname">chgname</a></td>
+<td>Provides support for the CHGNAME command.</td>
+</tr>
+<tr>
+<td><a href="/2/modules/cloaking">cloaking</a></td>
+<td>Provides masking of user hostnames.</td>
+</tr>
+<tr>
+<td><a href="/2/modules/clones">clones</a></td>
+<td>Provides the /CLONES command to retrieve information on clones.</td>
+</tr>
+<tr>
+<td><a href="/2/modules/close">close</a></td>
+<td>Provides /CLOSE functionality.</td>
+</tr>
+<tr>
+<td><a href="/2/modules/commonchans">commonchans</a></td>
+<td>Adds user mode +c, which if set, users must be on a common channel with you to private message you.</td>
+</tr>
+<tr>
+<td><a href="/2/modules/conn_join">conn_join</a></td>
+<td>Forces users to join the specified channel(s) on connect.</td>
+</tr>
+<tr>
+<td><a href="/2/modules/conn_umodes">conn_umodes</a></td>
+<td>Sets (and unsets) modes on users when they connect.</td>
+</tr>
+<tr>
+<td><a href="/2/modules/conn_waitpong">conn_waitpong</a></td>
+<td>Require pong prior to registration.</td>
+</tr>
+<tr>
+<td><a href="/2/modules/connectban">connectban</a></td>
+<td>Throttles the connections of IP ranges who try to connect flood.</td>
+</tr>
+<tr>
+<td><a href="/2/modules/connflood">connflood</a></td>
+<td>Connection throttle.</td>
+</tr>
+<tr>
+<td><a href="/2/modules/customprefix">customprefix</a></td>
+<td>Provides custom prefix channel modes.</td>
+</tr>
+<tr>
+<td><a href="/2/modules/customtitle">customtitle</a></td>
+<td>Custom Title for users.</td>
+</tr>
+<tr>
+<td><a href="/2/modules/cycle">cycle</a></td>
+<td>Provides command CYCLE, acts as a server-side HOP command to part and rejoin a channel.</td>
+</tr>
+<tr>
+<td><a href="/2/modules/dccallow">dccallow</a></td>
+<td>Provides support for the /DCCALLOW command.</td>
+</tr>
+<tr>
+<td><a href="/2/modules/deaf">deaf</a></td>
+<td>Provides usermode +d to block channel messages and channel notices.</td>
+</tr>
+<tr>
+<td><a href="/2/modules/delayjoin">delayjoin</a></td>
+<td>Allows for delay-join channels (+D) where users don't appear to join until they speak.</td>
+</tr>
+<tr>
+<td><a href="/2/modules/delaymsg">delaymsg</a></td>
+<td>Provides channelmode +d &lt;int&gt;, to deny messages to a channel until &lt;int&gt; seconds.</td>
+</tr>
+<tr>
+<td><a href="/2/modules/denychans">denychans</a></td>
+<td>Implements config tags which allow blocking of joins to channels.</td>
+</tr>
+<tr>
+<td><a href="/2/modules/devoice">devoice</a></td>
+<td>Provides voiced users with the ability to devoice themselves.</td>
+</tr>
+<tr>
+<td><a href="/2/modules/dnsbl">dnsbl</a></td>
+<td>Provides handling of DNS blacklists.</td>
+</tr>
+<tr>
+<td><a href="/2/modules/exemptchanops">exemptchanops</a></td>
+<td>Provides the ability to allow channel operators to be exempt from certain modes.</td>
+</tr>
+<tr>
+<td><a href="/2/modules/filter">filter</a></td>
+<td>Text (spam) filtering.</td>
+</tr>
+<tr>
+<td><a href="/2/modules/gecosban">gecosban</a></td>
+<td>Extban 'r' - realname (gecos) ban.</td>
+</tr>
+<tr>
+<td><a href="/2/modules/globalload">globalload</a></td>
+<td>Allows global loading of a module.</td>
+</tr>
+<tr>
+<td><a href="/2/modules/globops">globops</a></td>
+<td>Provides support for GLOBOPS and snomask +g.</td>
+</tr>
+<tr>
+<td><a href="/2/modules/halfop">halfop</a></td>
+<td>Channel half-operator mode provider.</td>
+</tr>
+<tr>
+<td><a href="/2/modules/helpop">helpop</a></td>
+<td>Provides the /HELPOP command for useful information.</td>
+</tr>
+<tr>
+<td><a href="/2/modules/hidechans">hidechans</a></td>
+<td>Provides support for hiding channels with user mode +I.</td>
+</tr>
+<tr>
+<td><a href="/2/modules/hideoper">hideoper</a></td>
+<td>Provides support for hiding oper status with user mode +H.</td>
+</tr>
+<tr>
+<td><a href="/2/modules/hostchange">hostchange</a></td>
+<td>Provides masking of user hostnames in a different way to m_cloaking.</td>
+</tr>
+<tr>
+<td><a href="/2/modules/httpd">httpd</a></td>
+<td>Provides HTTP serving facilities to modules.</td>
+</tr>
+<tr>
+<td><a href="/2/modules/httpd_acl">httpd_acl</a></td>
+<td>Provides access control lists (passwording of resources, ip restrictions etc) to m_httpd.so dependent modules.</td>
+</tr>
+<tr>
+<td><a href="/2/modules/httpd_config">httpd_config</a></td>
+<td>Allows for the server configuration to be viewed over HTTP via m_httpd.so.</td>
+</tr>
+<tr>
+<td><a href="/2/modules/httpd_stats">httpd_stats</a></td>
+<td>Provides statistics over HTTP via m_httpd.so.</td>
+</tr>
+<tr>
+<td><a href="/2/modules/ident">ident</a></td>
+<td>Provides support for RFC1413 ident lookups.</td>
+</tr>
+<tr>
+<td><a href="/2/modules/inviteexception">inviteexception</a></td>
+<td>Provides support for the +I channel mode.</td>
+</tr>
+<tr>
+<td><a href="/2/modules/ircv3">ircv3</a></td>
+<td>Provides support for extended-join, away-notify and account-notify CAP capabilities.</td>
+</tr>
+<tr>
+<td><a href="/2/modules/joinflood">joinflood</a></td>
+<td>Provides channel mode +j (join flood protection).</td>
+</tr>
+<tr>
+<td><a href="/2/modules/jumpserver">jumpserver</a></td>
+<td>Provides support for the RPL_REDIR numeric and the /JUMPSERVER command.</td>
+</tr>
+<tr>
+<td><a href="/2/modules/kicknorejoin">kicknorejoin</a></td>
+<td>Channel mode to delay rejoin after kick.</td>
+</tr>
+<tr>
+<td><a href="/2/modules/knock">knock</a></td>
+<td>Provides support for /KNOCK and channel mode +K.</td>
+</tr>
+<tr>
+<td><a href="/2/modules/lockserv">lockserv</a></td>
+<td>Allows locking of the server to stop all incoming connections until unlocked again.</td>
+</tr>
+<tr>
+<td><a href="/2/modules/maphide">maphide</a></td>
+<td>Hide /MAP and /LINKS in the same form as ircu.</td>
+</tr>
+<tr>
+<td><a href="/2/modules/md5">md5</a></td>
+<td>Implements MD5 hashing.</td>
+</tr>
+<tr>
+<td><a href="/2/modules/messageflood">messageflood</a></td>
+<td>Provides channel mode +f (message flood protection).</td>
+</tr>
+<tr>
+<td><a href="/2/modules/mlock">mlock</a></td>
+<td>Implements the ability to have server-side MLOCK enforcement.</td>
+</tr>
+<tr>
+<td><a href="/2/modules/muteban">muteban</a></td>
+<td>Implements extban +b m: - mute bans.</td>
+</tr>
+<tr>
+<td><a href="/2/modules/namedmodes">namedmodes</a></td>
+<td>Provides the ability to manipulate modes via long names.</td>
+</tr>
+<tr>
+<td><a href="/2/modules/namesx">namesx</a></td>
+<td>Provides the NAMESX (CAP multi-prefix) capability.</td>
+</tr>
+<tr>
+<td><a href="/2/modules/nationalchars">nationalchars</a></td>
+<td>Provides an ability to have non-RFC1459 nicks &amp; support for national CASEMAPPING.</td>
+</tr>
+<tr>
+<td><a href="/2/modules/nickflood">nickflood</a></td>
+<td>Channel mode F - nick flood protection.</td>
+</tr>
+<tr>
+<td><a href="/2/modules/nicklock">nicklock</a></td>
+<td>Provides the NICKLOCK command, allows an oper to change a users nick and lock them to it until they quit.</td>
+</tr>
+<tr>
+<td><a href="/2/modules/noctcp">noctcp</a></td>
+<td>Provides channel mode +C to block CTCPs.</td>
+</tr>
+<tr>
+<td><a href="/2/modules/nokicks">nokicks</a></td>
+<td>Provides channel mode +Q to prevent kicks on the channel.</td>
+</tr>
+<tr>
+<td><a href="/2/modules/nonicks">nonicks</a></td>
+<td>Provides support for channel mode +N &amp; extban +b N: which prevents nick changes on channel.</td>
+</tr>
+<tr>
+<td><a href="/2/modules/nonotice">nonotice</a></td>
+<td>Provides channel mode +T to block notices to the channel.</td>
+</tr>
+<tr>
+<td><a href="/2/modules/nopartmsg">nopartmsg</a></td>
+<td>Implements extban +b p: - part message bans.</td>
+</tr>
+<tr>
+<td><a href="/2/modules/ojoin">ojoin</a></td>
+<td>Network Business Join.</td>
+</tr>
+<tr>
+<td><a href="/2/modules/operchans">operchans</a></td>
+<td>Provides support for oper-only chans via the +O channel mode and 'O' extban.</td>
+</tr>
+<tr>
+<td><a href="/2/modules/operjoin">operjoin</a></td>
+<td>Forces opers to join the specified channel(s) on oper-up.</td>
+</tr>
+<tr>
+<td><a href="/2/modules/operlevels">operlevels</a></td>
+<td>Gives each oper type a 'level', cannot kill opers 'above' your level.</td>
+</tr>
+<tr>
+<td><a href="/2/modules/operlog">operlog</a></td>
+<td>A module which logs all oper commands to the ircd log at default loglevel.</td>
+</tr>
+<tr>
+<td><a href="/2/modules/opermodes">opermodes</a></td>
+<td>Sets (and unsets) modes on opers when they oper up.</td>
+</tr>
+<tr>
+<td><a href="/2/modules/opermotd">opermotd</a></td>
+<td>Shows a message to opers after oper-up, adds /opermotd.</td>
+</tr>
+<tr>
+<td><a href="/2/modules/operprefix">operprefix</a></td>
+<td>Gives opers cmode +y which provides a staff prefix.</td>
+</tr>
+<tr>
+<td><a href="/2/modules/override">override</a></td>
+<td>Provides support for allowing opers to override certain things.</td>
+</tr>
+<tr>
+<td><a href="/2/modules/passforward">passforward</a></td>
+<td>Sends server password to NickServ.</td>
+</tr>
+<tr>
+<td><a href="/2/modules/password_hash">password_hash</a></td>
+<td>Allows for hashed oper passwords.</td>
+</tr>
+<tr>
+<td><a href="/2/modules/permchannels">permchannels</a></td>
+<td>Provides support for channel mode +P to provide permanent channels.</td>
+</tr>
+<tr>
+<td><a href="/2/modules/randquote">randquote</a></td>
+<td>Provides random quotes on connect.</td>
+</tr>
+<tr>
+<td><a href="/2/modules/redirect">redirect</a></td>
+<td>Provides channel mode +L (limit redirection) and user mode +L (no forced redirection).</td>
+</tr>
+<tr>
+<td><a href="/2/modules/regex_glob">regex_glob</a></td>
+<td>Regex module using plain wildcard matching.</td>
+</tr>
+<tr>
+<td><a href="/2/modules/regonlycreate">regonlycreate</a></td>
+<td>Prevents users whose nicks are not registered from creating new channels.</td>
+</tr>
+<tr>
+<td><a href="/2/modules/remove">remove</a></td>
+<td>Provides a /remove command, this is mostly an alternative to /kick, except makes users appear to have parted the channel.</td>
+</tr>
+<tr>
+<td><a href="/2/modules/restrictchans">restrictchans</a></td>
+<td>Only opers may create new channels if this module is loaded.</td>
+</tr>
+<tr>
+<td><a href="/2/modules/restrictmsg">restrictmsg</a></td>
+<td>Forbids users from messaging each other. Users may still message opers and opers may message other opers.</td>
+</tr>
+<tr>
+<td><a href="/2/modules/ripemd160">ripemd160</a></td>
+<td>Provides RIPEMD-160 hashing.</td>
+</tr>
+<tr>
+<td><a href="/2/modules/rline">rline</a></td>
+<td>RLINE: Regexp user banning.</td>
+</tr>
+<tr>
+<td><a href="/2/modules/sajoin">sajoin</a></td>
+<td>Provides command SAJOIN to allow opers to force-join users to channels.</td>
+</tr>
+<tr>
+<td><a href="/2/modules/sakick">sakick</a></td>
+<td>Provides a SAKICK command.</td>
+</tr>
+<tr>
+<td><a href="/2/modules/samode">samode</a></td>
+<td>Provides command SAMODE to allow opers to change modes on channels and users.</td>
+</tr>
+<tr>
+<td><a href="/2/modules/sanick">sanick</a></td>
+<td>Provides support for SANICK command.</td>
+</tr>
+<tr>
+<td><a href="/2/modules/sapart">sapart</a></td>
+<td>Provides command SAPART to force-part users from a channel.</td>
+</tr>
+<tr>
+<td><a href="/2/modules/saquit">saquit</a></td>
+<td>Provides support for an SAQUIT command, exits user with a reason.</td>
+</tr>
+<tr>
+<td><a href="/2/modules/sasl">sasl</a></td>
+<td>Provides support for IRC Authentication Layer (aka: SASL) via AUTHENTICATE.</td>
+</tr>
+<tr>
+<td><a href="/2/modules/satopic">satopic</a></td>
+<td>Provides a SATOPIC command.</td>
+</tr>
+<tr>
+<td><a href="/2/modules/securelist">securelist</a></td>
+<td>Disallows /LIST for recently connected clients to hinder spam bots.</td>
+</tr>
+<tr>
+<td><a href="/2/modules/seenicks">seenicks</a></td>
+<td>Provides support for seeing local and remote nickchanges via snomasks.</td>
+</tr>
+<tr>
+<td><a href="/2/modules/serverban">serverban</a></td>
+<td>Extban 's' - server ban.</td>
+</tr>
+<tr>
+<td><a href="/2/modules/services_account">services_account</a></td>
+<td>Provides support for ircu-style services accounts, including chmode +R, etc.</td>
+</tr>
+<tr>
+<td><a href="/2/modules/servprotect">servprotect</a></td>
+<td>Provides usermode +k to protect services from kicks, kills, and mode changes.</td>
+</tr>
+<tr>
+<td><a href="/2/modules/sethost">sethost</a></td>
+<td>Provides support for the SETHOST command.</td>
+</tr>
+<tr>
+<td><a href="/2/modules/setident">setident</a></td>
+<td>Provides support for the SETIDENT command.</td>
+</tr>
+<tr>
+<td><a href="/2/modules/setidle">setidle</a></td>
+<td>Allows opers to set their idle time.</td>
+</tr>
+<tr>
+<td><a href="/2/modules/setname">setname</a></td>
+<td>Provides support for the SETNAME command.</td>
+</tr>
+<tr>
+<td><a href="/2/modules/sha256">sha256</a></td>
+<td>Implements SHA-256 hashing.</td>
+</tr>
+<tr>
+<td><a href="/2/modules/showwhois">showwhois</a></td>
+<td>Allows opers to set +W to see when a user uses WHOIS on them.</td>
+</tr>
+<tr>
+<td><a href="/2/modules/shun">shun</a></td>
+<td>Provides the /SHUN command, which stops a user from executing all except configured commands.</td>
+</tr>
+<tr>
+<td><a href="/2/modules/silence">silence</a></td>
+<td>Provides support for the /SILENCE command.</td>
+</tr>
+<tr>
+<td><a href="/2/modules/spanningtree">spanningtree</a></td>
+<td>Allows servers to be linked.</td>
+</tr>
+<tr>
+<td><a href="/2/modules/sqlauth">sqlauth</a></td>
+<td>Allow/Deny connections based upon an arbitrary SQL table.</td>
+</tr>
+<tr>
+<td><a href="/2/modules/sqloper">sqloper</a></td>
+<td>Allows storage of oper credentials in an SQL table.</td>
+</tr>
+<tr>
+<td><a href="/2/modules/sslinfo">sslinfo</a></td>
+<td>SSL Certificate Utilities.</td>
+</tr>
+<tr>
+<td><a href="/2/modules/sslmodes">sslmodes</a></td>
+<td>Provides channel mode +z to allow for Secure/SSL only channels.</td>
+</tr>
+<tr>
+<td><a href="/2/modules/stripcolor">stripcolor</a></td>
+<td>Provides channel +S mode (strip ansi color).</td>
+</tr>
+<tr>
+<td><a href="/2/modules/svshold">svshold</a></td>
+<td>Implements SVSHOLD. Like Q:Lines, but can only be added/removed by Services.</td>
+</tr>
+<tr>
+<td><a href="/2/modules/swhois">swhois</a></td>
+<td>Provides the SWHOIS command which allows setting of arbitrary WHOIS lines.</td>
+</tr>
+<tr>
+<td><a href="/2/modules/testnet">testnet</a></td>
+<td>Provides a module for testing the server while linked in a network.</td>
+</tr>
+<tr>
+<td><a href="/2/modules/timedbans">timedbans</a></td>
+<td>Adds timed bans.</td>
+</tr>
+<tr>
+<td><a href="/2/modules/tline">tline</a></td>
+<td>Provides /tline command used to test who a mask matches.</td>
+</tr>
+<tr>
+<td><a href="/2/modules/topiclock">topiclock</a></td>
+<td>Implements server-side topic locks and the server-to-server command SVSTOPIC.</td>
+</tr>
+<tr>
+<td><a href="/2/modules/uhnames">uhnames</a></td>
+<td>Provides the UHNAMES facility.</td>
+</tr>
+<tr>
+<td><a href="/2/modules/uninvite">uninvite</a></td>
+<td>Provides the UNINVITE command which lets users un-invite other users from channels.</td>
+</tr>
+<tr>
+<td><a href="/2/modules/userip">userip</a></td>
+<td>Provides support for USERIP command.</td>
+</tr>
+<tr>
+<td><a href="/2/modules/vhost">vhost</a></td>
+<td>Provides masking of user hostnames via traditional /VHOST command.</td>
+</tr>
+<tr>
+<td><a href="/2/modules/watch">watch</a></td>
+<td>Provides support for the /WATCH command.</td>
+</tr>
+<tr>
+<td><a href="/2/modules/xline_db">xline_db</a></td>
+<td>Keeps a dynamic log of all X-lines created, and stores them in a separate conf file (xline.db).</td>
+</tr>
+</tbody>
+</table>
+<h3 id="extra-modules">Extra Modules</h3>
+<p>These modules require third-party dependencies to be installed and have to be enabled at compile time. See the specific module page for details on how to enable these.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="/2/modules/geoip">geoip</a></td>
+<td>Provides a way to assign users to connect classes by country using GeoIP lookup.</td>
+</tr>
+<tr>
+<td><a href="/2/modules/ldapauth">ldapauth</a></td>
+<td>Allow/Deny connections based upon answer from LDAP server.</td>
+</tr>
+<tr>
+<td><a href="/2/modules/ldapoper">ldapoper</a></td>
+<td>Adds the ability to authenticate opers via LDAP.</td>
+</tr>
+<tr>
+<td><a href="/2/modules/mysql">mysql</a></td>
+<td>MySQL support.</td>
+</tr>
+<tr>
+<td><a href="/2/modules/pgsql">pgsql</a></td>
+<td>PostgreSQL Service Provider module for all other m_sql* modules, uses v2 of the SQL API.</td>
+</tr>
+<tr>
+<td><a href="/2/modules/regex_pcre">regex_pcre</a></td>
+<td>Regex Provider Module for PCRE.</td>
+</tr>
+<tr>
+<td><a href="/2/modules/regex_posix">regex_posix</a></td>
+<td>Regex Provider Module for POSIX Regular Expressions.</td>
+</tr>
+<tr>
+<td><a href="/2/modules/regex_stdlib">regex_stdlib</a></td>
+<td>Regex Provider Module for std::regex.</td>
+</tr>
+<tr>
+<td><a href="/2/modules/regex_tre">regex_tre</a></td>
+<td>Regex Provider Module for TRE Regular Expressions.</td>
+</tr>
+<tr>
+<td><a href="/2/modules/sqlite3">sqlite3</a></td>
+<td>sqlite3 provider.</td>
+</tr>
+<tr>
+<td><a href="/2/modules/ssl_gnutls">ssl_gnutls</a></td>
+<td>Provides SSL support for clients.</td>
+</tr>
+<tr>
+<td><a href="/2/modules/ssl_openssl">ssl_openssl</a></td>
+<td>Provides SSL support for clients.</td>
+</tr>
+</tbody>
+</table></div>
+        
+        
+    </div>
+
+    <footer class="col-md-12 text-center">
+        
+        <hr>
+        <p>
+        <small>All documentation is licensed under the <a href="/license">GNU GPLv2</a>.<br></small>
+        
+        <small>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p></small>
+
+        
+        
+    </footer>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../../js/bootstrap-3.0.3.min.js"></script>
+    <script src="../../js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script>var base_url = "../.."</script>
+    
+    <script src="../../js/base.js"></script>
+    <script src="../../search/main.js"></script>
+
+    <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+    </body>
+
+</html>
+
+<!--
+MkDocs version : 1.0.4
+Build Date UTC : 2019-05-11 13:55:14
+-->

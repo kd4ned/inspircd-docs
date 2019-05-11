@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="InspIRCd is a modular C++ Internet Relay Chat (IRC) server for UNIX-like and Windows systems.">
+    
+    
+    <link rel="../../../img/favicon.ico">
+
+    
+    <title> log - InspIRCd Documentation</title>
+    
+
+    <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack.min.css">
+    <link href='//fonts.googleapis.com/css?family=PT+Sans:400,400italic,700,700italic&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,600,700&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href="../../../css/bootstrap-custom.min.css" rel="stylesheet">
+    <link href="../../../css/base.min.css" rel="stylesheet">
+    <link href="../../../css/cinder.min.css" rel="stylesheet">
+    <link href="../../../css/highlight.min.css" rel="stylesheet">
+    <link href="../../../css/fix-cinder-sidebar-scrolling.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+            <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+        <![endif]-->
+
+    <script src="//ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+    <script>
+    WebFont.load({
+        google: {
+            families: ['Open Sans', 'PT Sans']
+        }
+    });
+    </script>
+
+    
+
+     
+</head>
+
+<body>
+
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+
+            <!-- Main title -->
+
+            <a class="navbar-brand" href="../../..">InspIRCd Documentation</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">InspIRCd 2 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="/2/installation">Installation</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="/2/configuration">Configuration</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="/2/commands">Commands</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="/2/modes">Modes</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="/2/modules">Modules</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="/2/snomasks">SNOMasks</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">InspIRCd 3 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="/3/installation">Installation</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="/3/configuration">Configuration</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="/3/commands">Commands</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="/3/modes">Modes</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="/3/modules">Modules</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="/3/snomasks">SNOMasks</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="https://github.com/inspircd/inspircd/releases/latest">Downloads</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="https://github.com/inspircd/inspircd/issues">Issue Tracker</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="https://www.inspircd.org/api/">Developer API</a>
+                    </li>
+                
+                
+                </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                            <i class="fas fa-search"></i> Search
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/inspircd/inspircd-docs/edit/master/docs/3/configuration/_log.md"><i class="fab fa-github"></i> Edit on GitHub</a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+    <div class="container">
+        
+        
+        <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="first-level active"><a href="#ltloggt">&lt;log&gt;</a></li>
+            <li class="second-level"><a href="#example-usage">Example Usage</a></li>
+                
+    </ul>
+</div></div>
+        <div class="col-md-9" role="main">
+
+<!-- This file contains a page fragment. Any changes will affect all pages that include it. -->
+
+<h3 id="ltloggt"><code>&lt;log&gt;</code></h3>
+<p>The <code>&lt;log&gt;</code> tag defines a location to log to. This tag can be defined as many times as required.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Default Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>method</td>
+<td>Text</td>
+<td>file</td>
+<td>The method to use for storing logs.</td>
+</tr>
+<tr>
+<td>type</td>
+<td>Text</td>
+<td><em>None</em></td>
+<td><strong>Required!</strong> A space-delimited token list of types of message to log.</td>
+</tr>
+<tr>
+<td>level</td>
+<td>Text</td>
+<td>default</td>
+<td>The level of messages to log.</td>
+</tr>
+<tr>
+<td>target</td>
+<td>Text</td>
+<td><em>None</em></td>
+<td>The location to write the log to.</td>
+</tr>
+</tbody>
+</table>
+<p>The method field should be set to one of the following values:</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>file</td>
+<td>The specified log types should be written to a file.</td>
+</tr>
+</tbody>
+</table>
+<p>The type field should be set to one or more of the following values:</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Logging Levels Used</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>BANCACHE</td>
+<td>debug</td>
+<td>Messages relating to the X-line result cache.</td>
+</tr>
+<tr>
+<td>CHANNELS</td>
+<td>debug</td>
+<td>Messages relating to channels.</td>
+</tr>
+<tr>
+<td>COMMAND</td>
+<td>default</td>
+<td>Messages relating to command execution.</td>
+</tr>
+<tr>
+<td>CONFIG</td>
+<td>default<br>debug</td>
+<td>Messages relating to the configuration.</td>
+</tr>
+<tr>
+<td>CONNECTCLASS</td>
+<td>debug</td>
+<td>Messages relating to connect classes.</td>
+</tr>
+<tr>
+<td>CULLLIST</td>
+<td>debug</td>
+<td>Messages relating to object cull lists.</td>
+</tr>
+<tr>
+<td>HEADER</td>
+<td>sparse</td>
+<td>Messages relating to starting logging.</td>
+</tr>
+<tr>
+<td>MODULE</td>
+<td>default<br>debug</td>
+<td>Messages relating to modules.</td>
+</tr>
+<tr>
+<td>SOCKET</td>
+<td>default<br>debug</td>
+<td>Messages relating to network sockets.</td>
+</tr>
+<tr>
+<td>STARTUP</td>
+<td>default</td>
+<td>Messages relating to the startup process.</td>
+</tr>
+<tr>
+<td>USERINPUT</td>
+<td>rawio</td>
+<td>Messages relating to user input.</td>
+</tr>
+<tr>
+<td>USEROUTPUT</td>
+<td>rawio</td>
+<td>Messages relating to user output.</td>
+</tr>
+<tr>
+<td>USERS</td>
+<td>default<br>debug</td>
+<td>Messages relating to users.</td>
+</tr>
+<tr>
+<td>core_channel</td>
+<td>debug</td>
+<td>Messages relating to channels.</td>
+</tr>
+<tr>
+<td>core_dns</td>
+<td>default<br>debug<br>sparse</td>
+<td>Messages relating to DNS lookups.</td>
+</tr>
+<tr>
+<td>core_hostname_lookup</td>
+<td>default<br>debug</td>
+<td>Messages relating to user hostname lookups.</td>
+</tr>
+<tr>
+<td>core_oper</td>
+<td>default<br>sparse</td>
+<td>Messages relating to server operators.</td>
+</tr>
+<tr>
+<td>core_reloadmodule</td>
+<td>debug</td>
+<td>Messages relating to the RELOADMODULE command.</td>
+</tr>
+<tr>
+<td>core_whowas</td>
+<td>default</td>
+<td>Messages relating to the WHOWAS command.</td>
+</tr>
+<tr>
+<td>m_callerid</td>
+<td>default</td>
+<td>Messages relating to <a href="/3/modules/callerid">the callerid module</a>.</td>
+</tr>
+<tr>
+<td>m_cap</td>
+<td>debug</td>
+<td>Messages relating to <a href="/3/modules/cap">the cap module</a>.</td>
+</tr>
+<tr>
+<td>m_cgiirc</td>
+<td>default<br>debug</td>
+<td>Messages relating to <a href="/3/modules/cgiirc">the cgiirc module</a>.</td>
+</tr>
+<tr>
+<td>m_chanlog</td>
+<td>default</td>
+<td>Messages relating to <a href="/3/modules/chanlog">the chanlog module</a>.</td>
+</tr>
+<tr>
+<td>m_connectban</td>
+<td>debug</td>
+<td>Messages relating to <a href="/3/modules/connectban">the connectban module</a>.</td>
+</tr>
+<tr>
+<td>m_customprefix</td>
+<td>debug</td>
+<td>Messages relating to <a href="/3/modules/customprefix">the customprefix module</a>.</td>
+</tr>
+<tr>
+<td>m_disable</td>
+<td>default<br>debug</td>
+<td>Messages relating to <a href="/3/modules/disable">the disable module</a>.</td>
+</tr>
+<tr>
+<td>m_dnsbl</td>
+<td>debug</td>
+<td>Messages relating to <a href="/3/modules/dnsbl">the dnsbl module</a>.</td>
+</tr>
+<tr>
+<td>m_filter</td>
+<td>default<br>debug</td>
+<td>Messages relating to <a href="/3/modules/filter">the filter module</a>.</td>
+</tr>
+<tr>
+<td>m_geo_maxmind</td>
+<td>debug</td>
+<td>Messages relating to <a href="/3/modules/geo_maxmind">the geo_maxmind module</a>.</td>
+</tr>
+<tr>
+<td>m_hidemode</td>
+<td>debug</td>
+<td>Messages relating to <a href="/3/modules/hidemode">the hidemode module</a>.</td>
+</tr>
+<tr>
+<td>m_httpd_acl</td>
+<td>debug</td>
+<td>Messages relating to <a href="/3/modules/httpd_acl">the httpd_acl module</a>.</td>
+</tr>
+<tr>
+<td>m_httpd_config</td>
+<td>debug</td>
+<td>Messages relating to <a href="/3/modules/httpd_config">the httpd_config module</a>.</td>
+</tr>
+<tr>
+<td>m_httpd_stats</td>
+<td>debug</td>
+<td>Messages relating to <a href="/3/modules/httpd_stats">the httpd_stats module</a>.</td>
+</tr>
+<tr>
+<td>m_ident</td>
+<td>debug</td>
+<td>Messages relating to <a href="/3/modules/ident">the ident module</a>.</td>
+</tr>
+<tr>
+<td>m_ircv3_sts</td>
+<td>debug</td>
+<td>Messages relating to <a href="/3/modules/ircv3_sts">the ircv3_sts module</a>.</td>
+</tr>
+<tr>
+<td>m_ldapauth</td>
+<td>debug</td>
+<td>Messages relating to <a href="/3/modules/ldapauth">the ldapauth module</a>.</td>
+</tr>
+<tr>
+<td>m_mysql</td>
+<td>default</td>
+<td>Messages relating to <a href="/3/modules/mysql">the mysql module</a>.</td>
+</tr>
+<tr>
+<td>m_nationalchars</td>
+<td>default</td>
+<td>Messages relating to <a href="/3/modules/nationalchars">the nationalchars module</a>.</td>
+</tr>
+<tr>
+<td>m_operlog</td>
+<td>default</td>
+<td>Messages relating to <a href="/3/modules/operlog">the operlog module</a>.</td>
+</tr>
+<tr>
+<td>m_password_hash</td>
+<td>default</td>
+<td>Messages relating to <a href="/3/modules/password_hash">the password_hash module</a>.</td>
+</tr>
+<tr>
+<td>m_permchannels</td>
+<td>default<br>debug</td>
+<td>Messages relating to <a href="/3/modules/permchannels">the permchannels module</a>.</td>
+</tr>
+<tr>
+<td>m_pgsql</td>
+<td>default<br>debug</td>
+<td>Messages relating to <a href="/3/modules/pgsql">the pgsql module</a>.</td>
+</tr>
+<tr>
+<td>m_regex_pcre</td>
+<td>debug</td>
+<td>Messages relating to <a href="/3/modules/regex_pcre">the regex_pcre module</a>.</td>
+</tr>
+<tr>
+<td>m_sasl</td>
+<td>default<br>verbose<br>debug</td>
+<td>Messages relating to <a href="/3/modules/sasl">the sasl module</a>.</td>
+</tr>
+<tr>
+<td>m_showfile</td>
+<td>default</td>
+<td>Messages relating to <a href="/3/modules/showfile">the showfile module</a>.</td>
+</tr>
+<tr>
+<td>m_spanningtree</td>
+<td>default<br>debug<br>rawio</td>
+<td>Messages relating to <a href="/3/modules/spanningtree">the spanningtree module</a>.</td>
+</tr>
+<tr>
+<td>m_sqlite3</td>
+<td>default</td>
+<td>Messages relating to <a href="/3/modules/sqlite3">the sqlite3 module</a>.</td>
+</tr>
+<tr>
+<td>m_sqloper</td>
+<td>sparse, default</td>
+<td>Messages relating to <a href="/3/modules/sqloper">the sqloper module</a>.</td>
+</tr>
+<tr>
+<td>m_ssl_gnutls</td>
+<td>default<br>debug</td>
+<td>Messages relating to <a href="/3/modules/ssl_gnutls">the ssl_gnutls module</a>.</td>
+</tr>
+<tr>
+<td>m_ssl_mbedtls</td>
+<td>default<br>debug</td>
+<td>Messages relating to <a href="/3/modules/ssl_mbedtls">the ssl_mbedtls module</a>.</td>
+</tr>
+<tr>
+<td>m_ssl_openssl</td>
+<td>default<br>debug</td>
+<td>Messages relating to <a href="/3/modules/ssl_openssl">the ssl_openssl module</a>.</td>
+</tr>
+<tr>
+<td>m_sslinfo</td>
+<td>debug</td>
+<td>Messages relating to <a href="/3/modules/sslinfo">the sslinfo module</a>.</td>
+</tr>
+<tr>
+<td>m_sslrehashsignal</td>
+<td>default</td>
+<td>Messages relating to <a href="/3/modules/sslrehashsignal">the sslrehashsignal module</a>.</td>
+</tr>
+<tr>
+<td>m_topiclock</td>
+<td>default</td>
+<td>Messages relating to <a href="/3/modules/topiclock">the topiclock module</a>.</td>
+</tr>
+<tr>
+<td>m_xline_db</td>
+<td>debug</td>
+<td>Messages relating to <a href="/3/modules/xline_db">the xline_db module</a>.</td>
+</tr>
+</tbody>
+</table>
+<p>The level field should be set to one of the following values:</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>rawio</td>
+<td>Logs raw I/O traffic.</td>
+</tr>
+<tr>
+<td>debug</td>
+<td>Logs debug information.</td>
+</tr>
+<tr>
+<td>verbose</td>
+<td>Logs verbose information.</td>
+</tr>
+<tr>
+<td>default</td>
+<td>Logs general information.</td>
+</tr>
+<tr>
+<td>sparse</td>
+<td>Log errors and other infrequent information.</td>
+</tr>
+<tr>
+<td>none</td>
+<td>Logs nothing.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="example-usage">Example Usage</h4>
+<pre><code class="xml">&lt;log method=&quot;file&quot;
+     type=&quot;* -USERINPUT -USEROUTPUT&quot;
+     level=&quot;default&quot;
+     target=&quot;ircd.log&quot;&gt;
+</code></pre></div>
+        
+        
+    </div>
+
+    <footer class="col-md-12 text-center">
+        
+        <hr>
+        <p>
+        <small>All documentation is licensed under the <a href="/license">GNU GPLv2</a>.<br></small>
+        
+        <small>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p></small>
+
+        
+        
+    </footer>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../../../js/bootstrap-3.0.3.min.js"></script>
+    <script src="../../../js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script>var base_url = "../../.."</script>
+    
+    <script src="../../../js/base.js"></script>
+    <script src="../../../search/main.js"></script>
+
+    <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+    </body>
+
+</html>
