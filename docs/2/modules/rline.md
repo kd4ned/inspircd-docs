@@ -6,7 +6,7 @@ title: Module Details (rline)
 
 ### Description
 
-This module adds the `/RLINE` command which allows server operators to prevent users matching a nickname!username@hostname+realname regular expression from connecting to the server.
+This module adds the `/RLINE` command which allows server operators to prevent users matching a "nickname!username@hostname realname" regular expression from connecting to the server.
 
 ### Configuration
 
@@ -42,7 +42,7 @@ The engine field should be set to the name of a regular expression engine.
 
 Name  | Parameter Count | Syntax                          | Description
 ----- | --------------- | ------------------------------- | -----------
-RLINE | 1, 3            | `<regex> [<duration> <reason>]` | Allows server operators to add and remove regular expression bans on nickname!username@hostname+realname masks.
+RLINE | 1, 3            | `<regex> [<duration> <reason>]` | Allows server operators to add and remove regular expression bans on "nickname!username@hostname realname" masks.
 
 #### Example Usage
 
@@ -53,19 +53,19 @@ The following examples assume that the "pcre" regex module is being used. See th
 Bans users connecting from example.com for one week:
 
 ```plaintext
-/RLINE ^[^!]+![^@]+@example.com\+.+$ 7d :Trolling is forbidden
+/RLINE ^[^!]+![^@]+@example.com\s.+$ 7d :Trolling is forbidden
 ```
 
 Bans users that have "BotBot" in their real name forever:
 
 ```plaintext
-/RLINE ^[^!]+![^@]+@[^\+]+\+.*BotBot.*$ 0 :No bots allowed
+/RLINE ^[^!]+![^@]+@[^\+]+\s.*BotBot.*$ 0 :No bots allowed
 ```
 
 Unbans users connecting from example.com:
 
 ```plaintext
-/RLINE ^[^!]+![^@]+@example.com\+.+$
+/RLINE ^[^!]+![^@]+@example.com\s.+$
 ```
 
 ### Statistics
